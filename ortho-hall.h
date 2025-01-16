@@ -12,9 +12,10 @@ struct sensor_variables {
 class angle_sensor {
     public:
         angle_sensor();
-        angle_sensor(int pin_x, int pin_y, struct sensor_variables sensor, int (*reading_function)(int), int adc_resolution = 12);
+	angle_sensor(int pin_x, int pin_y, struct sensor_variables sensor, int (*reading_function)(int));
+        angle_sensor(int pin_x, int pin_y, struct sensor_variables sensor, int (*reading_function)(int), int adc_resolution);
 
-        void init(int pin_x, int pin_y, struct sensor_variables sensor, int (*reading_function)(int), int adc_resolution = 12);
+        void init(int pin_x, int pin_y, struct sensor_variables sensor, int (*reading_function)(int), int adc_resolution);
 
         float read_angle();
         float read_angle_degrees();

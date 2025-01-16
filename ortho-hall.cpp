@@ -4,7 +4,11 @@
 
 #include <math.h>
 
-void angle_sensor::init(int pin_x, int pin_y, sensor_variables sensor, int (*reading_function)(int), int adc_resolution = 12) {
+void angle_sensor::init(int pin_x, int pin_y, sensor_variables sensor, int (*reading_function)(int)) {   
+    this->init(pin_x, pin_y, sensor, reading_function, 12);
+}
+
+void angle_sensor::init(int pin_x, int pin_y, sensor_variables sensor, int (*reading_function)(int), int adc_resolution) {
     this->pin_x = pin_x;
     this->pin_y = pin_y;
     this->sensor = sensor;
