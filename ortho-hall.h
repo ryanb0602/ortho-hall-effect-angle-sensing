@@ -29,7 +29,7 @@ class angle_sensor {
 
             int (*reading_function)(int);
             float normalize_values(float normal_targ, float x, float y) const;
-
+	        int adc_range_normalize(int adc_value);
 };
 
 #endif
